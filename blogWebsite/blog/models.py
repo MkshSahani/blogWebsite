@@ -6,7 +6,7 @@ class Post(models.Model):  # our post model.
     
     title = models.CharField(max_length=100)
     slug = models.CharField(max_length=100)
-    author = models.ForeignKey(User,on_delete=models.PROTECT)
+    author = models.ForeignKey(User,on_delete=models.PROTECT, related_name='blog_post')
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
