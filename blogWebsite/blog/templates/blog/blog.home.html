@@ -1,0 +1,26 @@
+{% extends 'base.Home.html' %}
+{% load static %}
+{% block title %}
+    Blog | Home
+{% endblock %}
+{% block bodyContent %}
+    <div class="sigupPage"> 
+        <h2>SignUp Page</h2>
+        <form action="{% url 'Home' %}" method="POST" autocomplete="off"> 
+        {% csrf_token %}
+        <input type="text" name="userName" placeholder="username" required /> 
+        <input type="password" name="userPassword" placeholder="password" required /> 
+        <input type="submit" value="Sigup" name="submit"> 
+        </form>  
+    </div> 
+
+    <div class="LoginPage"> 
+        <h2>Login Page</h2>
+        <form action="{% url 'Home' %}" method="POST" autocomplete="off"> 
+        {% csrf_token %}
+        <input type="text" name="loginUser" placeholder="username" required />
+        <input type="password" name="loginPassword" placeholder="password" required> 
+        <input type="submit" value="login" name="login" />  
+        </form> 
+    </div> 
+{% endblock %}
